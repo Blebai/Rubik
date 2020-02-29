@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>haha</title>
+   <style>
+       h1{
+           color: aqua;
+           font-size: 20px;
+       }
+       #aa{
+           color: blue;
+           font-size: 10px;
+       }/*标签选择器*/
+       h1,p{
+           color: darkgoldenrod;
+           font-size: 50px;
+       }
+       .cc{
+           color: bisque;
+           font: 70;
+       }
+   </style>
+</head>
+<body>
+
+<h1 >xixixi</h1>
+<h1  class="cc">haha</h1>
+<p>aaaaaa</p>
+
+
+
+
+</body>
+</html>
