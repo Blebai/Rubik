@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        #menu a{
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: darkgray;
+            color: aqua;
+            text-indent: 20px;
+        }
+        #menu a:hover{
+            background: blanchedalmond;
+        }
+        #menu li{
+            width: 120px;
+            height: 30px;
+            background: gray;
+            float: left;
+            margin-right: 1px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="#">Link 1</a>
+    </li>
+    <li><a href="#">Link2</a></li>
+    <li><a href="#">Link3</a></li>
+    <li><a href="#">Link4</a></li>
+</ul>
+
+
+</body>
+</html>
