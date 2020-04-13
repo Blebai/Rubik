@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    ,<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            height: 300px;
+            width: 320px;
+            border:1px solid;
+            overflow: hidden;
+            position: relative;
+            margin: 100px auto;
+        }
+        #tab{
+            width: 440px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        #tab li{
+            float: left;
+            height: 100px;
+            width: 100px;
+            background: #000;
+            color: #fff;
+            font-size: larger;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+        #arrow{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left:-65px ;
+        }
+        #arrow span{
+            display: block;
+            float: left;
+            height: 30px;
+            width: 60px;
+            background: #609;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="tab">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrow">
+            <span id="left">向左</span>
+            <span id="right">向右</spanid>
+        </div>
+    </div>
+    <script>
+        var oTab = document.getElementById('tab');
+        var aLeft = document.getElementById('left');
+        var aRight = document.getElementById('right');
+        oTab.innerHTML += oTab.innerHTML;
+        oTab.style.width = oTab.offsetWidth*2 + 'px';
+        var speed;
+        setInterval(function(){
+            oTab.style.left = oTab.offsetLeft + speed + 'px';
+            if(-oTab.offsetLeft >= oTab.offsetWidth / 2){
+                oTab.style.left = '0px';
+            }
+            else if(oTab.offsetLeft >= 0){
+                oTab.style.left = -oTab.offsetWidth / 2 + 'px';
+            }
+        },30);
+        aRight.onclick = aLeft.onclick = function(){
+            if(this === aRight){
+                speed = 10;
+            }
+            else{
+                speed = -10;
+            }
+        };
+    </script>
+</body>
+</html>
