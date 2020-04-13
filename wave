@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1,#div2,#div3{
+            height: 50px;
+            width: 100px;
+            background: #ffa500;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script>
+        var timer;
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3 = document.getElementById('div3');
+        var timer;
+        bigger(oDiv1);
+        bigger(oDiv2);
+        bigger(oDiv3);
+        function bigger(elem){
+            elem.onmouseover = function(){
+            elem.timer = setInterval(function(){
+                elem.style.width = elem.offsetWidth + 10 +'px';
+                if(elem.offsetWidth >= 300){
+                    clearInterval( elem.timer);
+                }
+            },30);
+        };
+        elem.onmouseout = function(){
+            clearInterval( elem.timer);
+            elem.timer = setInterval(function(){
+                elem.style.width = elem.offsetWidth - 10 +'px';
+                if(elem.offsetWidth <= 100){
+                    clearInterval( elem.timer);
+                }
+            },30);
+        };
+
+        }
+        
+
+
+    </script>
+</body>
+</html>
