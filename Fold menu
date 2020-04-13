@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            text-align: center;
+        }
+        h3{
+            background: #000;
+            color: #fff;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #container{
+            border: 1px solid;
+            width: 150px;
+            margin: 100px auto;
+        }
+        
+        #container ul{
+            display: none;
+        }
+        #container ul li:hover{
+            background: #d3d3d3;;
+
+        }
+    </style>
+</head>
+<body>
+   <ul id="container">
+       <li>
+           <h3>交流区</h3>
+           <ul>
+               <li>01</li>
+               <li>02</li>
+               <li>03</li>
+           </ul>
+       </li>
+        <li>
+           <h3>互动区</h3>
+           <ul>
+               <li>01</li>
+               <li>02</li>
+               <li>03</li>
+           </ul>
+        </li>
+   </ul>
+   <script>
+       var aH3 = document.getElementsByTagName('h3');
+       for(var i = 0; i <aH3.length ;i++){
+           aH3[i].flag = false;
+           aH3[i].onclick = function(){
+               var oNext = next(this);
+               if(this.flag){
+                   oNext.style.display = 'none';
+               }
+               else{
+                   oNext.style.display = 'block';
+               }
+               this.flag = !this.flag;
+           }
+           aH3[i].onselectstart = function(){
+            return false;
+           };
+       }
+
+       function next(elem){
+           do{
+               elem = elem.nextSibling;
+           }while(elem && elem.nodeType != 1);
+           return elem;
+       }
+
+   </script>
+</body>
+</html>
